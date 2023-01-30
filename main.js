@@ -4,15 +4,32 @@
 //let additems=document.all[14];
 //additems.style.color = "green";
 //additems.style.fontWeight  ="bold";
-let items = document.getElementsByClassName('list-group-item');
-console.log(items);
 
-items[1].style.backgroundColor = "lightpink";
+//GET ELEMENTS BY CLASS NAME:
+//let items = document.getElementsByClassName('list-group-item');
+//console.log(items);
+
+//items[1].style.backgroundColor = "lightpink";
 
 //Will give an error
 //items.style.backgroundColor = "red";
 
-for(let i=0;i<items.length;i++)
+//for(let i=0;i<items.length;i++)
+//{
+    //items[i].style.backgroundColor = "lightyellow";
+//};
+
+//GET ELEMENTS BY TAG NAME:
+
+let tag=document.getElementsByTagName('li');
+console.log(tag);
+
+tag[1].style.backgroundColor = "lightpink";
+
+//Will give an error
+//tag.style.backgroundColor = "red";
+
+for(let i=0;i<tag.length;i++)
 {
-    items[i].style.backgroundColor = "lightyellow";
+    tag[i].style.backgroundColor = "lightblue";
 };
