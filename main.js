@@ -1,66 +1,61 @@
-//let title=document.getElementById('main-header');
-//title.style.border ="red 3px solid";
-//title.style.borderRadius ="30px";
-//let additems=document.all[14];
-//additems.style.color = "green";
-//additems.style.fontWeight  ="bold";
+//PARENT ELEMENT:
+let items = document.querySelector("#items");
+console.log(items.parentNode.parentNode.parentElement)
 
-//GET ELEMENTS BY CLASS NAME:
-//let items = document.getElementsByClassName('list-group-item');
-//console.log(items);
+//LASTELEMENTCHILD:
+items = document.querySelector("#items");
+console.log(items.lastElementChild);
 
-//items[1].style.backgroundColor = "lightpink";
+//lastchild
+console.log(items.lastChild);//as same it will show "text" because of breakline or white space.
 
-//Will give an error
-//items.style.backgroundColor = "red";
+//CREATE ELEMENT
+let newdiv = document.createElement("div");
+newdiv.className = "hello";
+newdiv.id = "hello 1";
+newdiv.setAttribute('title','hello world');
 
-//for(let i=0;i<items.length;i++)
-//{
-    //items[i].style.backgroundColor = "lightyellow";
-//};
+let divtext = document.createTextNode('Hello Kishan');
+newdiv.appendChild(divtext);
 
-//GET ELEMENTS BY TAG NAME:
-//let tag=document.getElementsByTagName('li');
-//console.log(tag);
+console.log(newdiv);
 
-//tag[1].style.backgroundColor = "lightpink";
+//FIRSTELEMENTCHILD
+let items = document.querySelector("#items");
+console.log(items.firstElementChild);
 
-//Will give an error
-//tag.style.backgroundColor = "red";
+//FIRSTCHILD
+console.log(items.firstChild);//as same it will show "text" because of breakline or white space.
 
-//for(let i=0;i<tag.length;i++)
-//{
-    //tag[i].style.backgroundColor = "lightblue";
-//};
+//NEXTSIBLING
+let items=document.querySelector("#items");
+console.log(items.nextSibling)//as same it will show "text" because of breakline or white space.
 
+//NEXT ELEMENT SIBLING
+console.log(items.nextElementSibling); //ANS is null because we dont any next sibling of this element
 
-//Adding new class
+//PREVIOUSSIBLING
+let items=document.querySelector("#items");
+console.log(items.previousSibling)//as same it will show "text" because of breakline or white space.
 
-//let tag=document.getElementsByClassName('list-group-item');
-//console.log(tag);
+//PREVIOUSELEMENTSIBLING
+console.log(items.previousElementSibling);
+items.previousElementSibling.style.backgroundColor = "red";
 
-//tag[4].style.backgroundColor = "lightpink";
+//CREATECHILD AND APPEND CHILD
+let newdiv = document.createElement("div");
+newdiv.className = "hello";
+newdiv.id = "hello 1";
+newdiv.setAttribute('title','hello world');
+let divtext = document.createTextNode('Hello Kishan');
+newdiv.appendChild(divtext);
+console.log(newdiv);
+let container = document.querySelector('header .container');
+let h1 = document.querySelector('header #header-title');
+container.insertBefore(newdiv,h1);
 
-
-// QUERRY SELECTOR
-
-//let item = document.querySelector(".list-group-item");
-//item.style.color = "red";
-
-//item2 = document.querySelector(".list-group-item:nth-child(2)");
-//item2.style.color = "green";
-
-//let item3 = document.querySelector(".list-group-item:nth-child(3)")
-//item3.style.display = "none";
-
-//  QUERRY SELECTOR  ALL  
-
-let items = document.querySelectorAll(".list-group-item");
-items[1].style.color = "green";
-
-let odd=document.querySelectorAll(".list-group-item:nth-child(odd)");
-
-for(let i=0;i<odd.length;i++)
-{
-    odd[i].style.backgroundColor = "green";
-}
+//SET ATTRIBUTE
+let newdiv = document.createElement("div");
+newdiv.className = "hello";
+newdiv.id = "hello 1";
+newdiv.setAttribute('title','hello world');
