@@ -1,61 +1,31 @@
-//PARENT ELEMENT:
-let items = document.querySelector("#items");
-console.log(items.parentNode.parentNode.parentElement)
+let form = document.querySelector('#addform');
+let itemlist=document.querySelector('#items');
+itemlist.addEventListener('click',removeelement);
+function removeelement(e){
+    if(e.target.classList.contains('delete')){
+        if(confirm('Are you sure???'))
+        {
+            let li=e.target.parentElement;
+            itemlist.removeChild(li);
+        }
+    }
+}
+form.addEventListener('submit',additem);
+ function additem(val){
+    val.preventDefault();
 
-//LASTELEMENTCHILD:
-items = document.querySelector("#items");
-console.log(items.lastElementChild);
+    let item = document.querySelector("#submition").value;
+    
+    //create one element
+    let li=document.createElement('li');
+    li.className = 'list-group-item';
+    let text=document.createTextNode(item);
+    li.appendChild(text);
+    items.appendChild(li);
 
-//lastchild
-console.log(items.lastChild);//as same it will show "text" because of breakline or white space.
-
-//CREATE ELEMENT
-let newdiv = document.createElement("div");
-newdiv.className = "hello";
-newdiv.id = "hello 1";
-newdiv.setAttribute('title','hello world');
-
-let divtext = document.createTextNode('Hello Kishan');
-newdiv.appendChild(divtext);
-
-console.log(newdiv);
-
-//FIRSTELEMENTCHILD
-let items = document.querySelector("#items");
-console.log(items.firstElementChild);
-
-//FIRSTCHILD
-console.log(items.firstChild);//as same it will show "text" because of breakline or white space.
-
-//NEXTSIBLING
-let items=document.querySelector("#items");
-console.log(items.nextSibling)//as same it will show "text" because of breakline or white space.
-
-//NEXT ELEMENT SIBLING
-console.log(items.nextElementSibling); //ANS is null because we dont any next sibling of this element
-
-//PREVIOUSSIBLING
-let items=document.querySelector("#items");
-console.log(items.previousSibling)//as same it will show "text" because of breakline or white space.
-
-//PREVIOUSELEMENTSIBLING
-console.log(items.previousElementSibling);
-items.previousElementSibling.style.backgroundColor = "red";
-
-//CREATECHILD AND APPEND CHILD
-let newdiv = document.createElement("div");
-newdiv.className = "hello";
-newdiv.id = "hello 1";
-newdiv.setAttribute('title','hello world');
-let divtext = document.createTextNode('Hello Kishan');
-newdiv.appendChild(divtext);
-console.log(newdiv);
-let container = document.querySelector('header .container');
-let h1 = document.querySelector('header #header-title');
-container.insertBefore(newdiv,h1);
-
-//SET ATTRIBUTE
-let newdiv = document.createElement("div");
-newdiv.className = "hello";
-newdiv.id = "hello 1";
-newdiv.setAttribute('title','hello world');
+    let deletebtn = document.createElement('button');
+    deletebtn.className = "btn btn-danger btn-sm float-right delete";
+    let deltext = document.createTextNode('X');
+    deletebtn.appendChild(deltext);
+    li.appendChild(deletebtn)
+ }
